@@ -4,6 +4,8 @@ use Think\Controller;
 class MsgController extends Controller {
 	public function get(){
 		$u = D('User');
+
+		//var_dump(I('sk'));die();
 		$user = $u->getUserInfo(vaild_sk(I('sk')));
 		$where['msg.uid'] = $user['id'];
 		$where['msg.type'] = I('type');

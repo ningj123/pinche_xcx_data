@@ -93,8 +93,7 @@ class UserController extends Controller {
             $result .= @fread($fp, $len);
             @fclose($fp);
         }
-        else
-        {
+        else {
             trigger_error('Can not open /dev/urandom.');
             return substr(time().MD5(time().rand()), 0, $len);
         }
